@@ -1,0 +1,1 @@
+worker: python greet_dis.py
