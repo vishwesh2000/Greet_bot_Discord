@@ -22,5 +22,5 @@ async def on_member_join(member):
 @client.event
 async def on_message(message):
     if message.content == 'Mol!':
-        await message.channel.send('Helo Loper!!')
+        await message.channel.send('Helu Guru!!')
 client.run(token)
