@@ -1,4 +1,4 @@
-#MUSIX SERVER WELCOMER and FUN BOT - MOLUCTUS
+# Welcome bot - Welcomes New members!
 import discord
 
 with open('token.txt','r') as token_file:
@@ -12,15 +12,17 @@ client = discord.Client(intents=intents)
 async def on_ready():
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name='Welcoming Newbies🤪!!'))
 
+GUILDID = Enter your guildid here
+CHID = Enter your channelid here
 @client.event
 async def on_member_join(member):
-    guild = client.get_guild(845535956135313418)
-    channel = guild.get_channel(845535956135313420)
+    guild = client.get_guild(GUILDID)
+    channel = guild.get_channel(CHID)
     await channel.send(f'Welcome to the server {member.mention}!! :partying_face::partying_face::partying_face:\nEnjoy your stay💯') #Welcoming on channel
-    await member.send(f'Welcome to the {guild.name}, {member.name}! :partying_face:\nHead over to ,<#845535956135313421> for GAMING discussions🎮 and to <#845535956135313422> for MUSIC🎼🎵..... Enjoy your stay💯') #Welcoming on DM
+    await member.send(f'Welcome to the {guild.name}, {member.name}! :partying_face:\nHead over to ,<#Enter your CHID here> for GAMING discussions🎮 and to <#Other CHID> for MUSIC🎼🎵..... Enjoy your stay💯') #Welcoming on DM
 
 @client.event
 async def on_message(message):
     if message.content == 'Mol!':
-        await message.channel.send('Helu Guru!!')
+        await message.channel.send('Hi There!')
 client.run(token)
